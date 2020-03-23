@@ -1,0 +1,50 @@
+.main-shadow, .theme-default .main {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3); }
+
+.main-gradient, .theme-default {
+  background: linear-gradient(45deg, #70c5f4 0%, #846bf7 100%); }
+
+body {
+  min-height: 100vh; }
+
+.main {
+  width: 80vw;
+  min-height: 80vh; }
+  .main.position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.top-panel {
+  position: relative;
+  height: 40px; }
+  .top-panel .top-panel__area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25%; }
+    .top-panel .top-panel__area.left {
+      left: 0; }
+      .top-panel .top-panel__area.left:hover {
+        width: 50%;
+        background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, #00b991 75%);
+        border-radius: 8px 0 0 0;
+        cursor: pointer; }
+    .top-panel .top-panel__area.right {
+      right: 0; }
+      .top-panel .top-panel__area.right:hover {
+        width: 50%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #b4ffef 75%);
+        border-radius: 0 8px 0 0;
+        cursor: pointer; }
+
+.theme-default .main {
+  background-color: #ffffff;
+  border-radius: 8px; }
+
+.theme-default .top-panel {
+  background-color: #1eebbe;
+  border-radius: 8px 8px 0 0; }
+
+/*# sourceMappingURL=theme.css.map */
