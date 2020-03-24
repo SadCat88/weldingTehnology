@@ -7,8 +7,11 @@ $colorMain_2: #70c5f4;
 $colorSecond: #1eebbe;
 $colorSecond_1: #00b991;
 $colorSecond_2: #b4ffef;
+$colorSecondBg: #e7fffa;
+
 
 $colorContentBg: #ffffff;
+
 // $secondColor: #5947E4;
 
 // $mainBgColor: #7a98f6;
@@ -28,6 +31,10 @@ $radiusPanel: 8px;
 // === shadow
 .main-shadow {
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.right-shadow {
+  box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 // === gradients
@@ -78,6 +85,17 @@ $radiusPanel: 8px;
 
 // === ↑ fonts
 
+// === base ====================================================================
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
 
 
 // === main ====================================================================
@@ -89,6 +107,7 @@ body {
 .main {
   width: 80vw;
   min-height: 80vh;
+  overflow: hidden;
 
   &.position {
     position: absolute;
@@ -101,6 +120,7 @@ body {
 // === catalog =================================================================
 .top-panel {
   position: relative;
+  z-index: 10;
   height: 40px;
 
   .top-panel__area {
@@ -155,5 +175,125 @@ body {
   .top-panel {
     background-color: $colorSecond;
     border-radius: $radiusPanel $radiusPanel 0 0;
+  }
+
+  .navigation,
+  .sublevel-2,
+  .sublevel-3,
+  .sublevel-4 {
+    background-color: $colorSecondBg;
+    border-radius: $radiusPanel;
+    @extend .right-shadow;
+  }
+}
+
+// === components ==============================================================
+.navigation {
+  padding: 20px 0;
+
+  white-space: nowrap;
+
+  &.position {
+    position: absolute;
+    z-index: 101;
+
+
+    top: 40px;
+    bottom: 0;
+
+    transform: translate(-110%);
+    transition-duration: 200ms;
+  }
+
+
+  &.active {
+    transform: translate(0);
+    transition-duration: 200ms;
+  }
+
+  .navigation-list {
+    .navigation-list__item {
+      .navigation-list__item-link {
+        display: block;
+        padding: 5px 30px;
+      }
+    }
+
+    &.sublevel-1 {
+      position: relative;
+
+      .navigation-list__item {
+        position: relative;
+
+        .navigation-list__item-link {
+          display: block;
+          padding: 5px 30px 5px 45px;
+        }
+      }
+    }
+
+    &.sublevel-2 {
+      position: absolute;
+
+      top: 0;
+      right: 10px;
+      transform: translate(100%);
+
+      display: none;
+      padding: 5px 0;
+
+      .navigation-list__item {
+        position: relative;
+
+        .navigation-list__item-link {
+          display: block;
+          padding: 5px 30px 5px 25px;
+        }
+      }
+    }
+
+    &.sublevel-3 {
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      transform: translate(100%);
+
+      display: none;
+      padding: 5px 0;
+
+      .navigation-list__item {
+        position: relative;
+
+        .navigation-list__item-link {
+          display: block;
+          padding: 5px 30px 5px 25px;
+        }
+      }
+    }
+
+    &.sublevel-4 {
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      transform: translate(100%);
+
+      display: none;
+      padding: 5px 0;
+
+      .navigation-list__item {
+        position: relative;
+
+        .navigation-list__item-link {
+          display: block;
+          padding: 5px 30px 5px 25px;
+        }
+      }
+    }
+
+    .navigation-list__item {
+      &:hover>.navigation-list {
+        display: block;
+      }
+    }
   }
 }
